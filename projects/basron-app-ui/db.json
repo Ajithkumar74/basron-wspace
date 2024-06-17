@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "54f4",
+      "email": "ajithkumar2419990@gmail.com",
+      "phone": "+919148627752",
+      "password": "12345"
+    },
+    {
+      "id": "665c",
+      "email": "arjith@gmail.com",
+      "phone": "+910789056786",
+      "password": "123"
+    },
+    {
+      "id": "dac9",
+      "email": "jay34@gmail.com",
+      "phone": "+919080678945",
+      "password": "125"
+    }
+  ]
+}

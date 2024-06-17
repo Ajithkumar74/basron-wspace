@@ -1,0 +1,132 @@
+body {
+
+    h1 {
+color: #6C63FF;
+margin-bottom: 20px;
+}
+h2 {
+color: #6C63FF;
+margin-bottom: 10px;
+}
+    background-color: #f8f8f8; /* Light grey background */
+    color: #5a5a5a; /* Dark grey text color */
+    font-family: Arial, sans-serif; /* Default font family */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+}
+.title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #7f5af0; /* Light blue text color */
+    font-weight: bold;
+}
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #7f5af0; /* Light blue text color */
+    font-weight: bold;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.form input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 1px solid #7f5af0; /* Light blue border color */
+    background: none;
+    font-size: 1em;
+    color: #5a5a5a; /* Dark grey text color */
+}
+.form input::placeholder {
+    color: #5a5a5a; /* Dark grey placeholder text color */
+}
+.form .password-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+/* .form .password-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transform: translateY(-50%);
+    color: #7f5af0; /* Light blue icon color 
+} */
+.form .forgot {
+    align-self: flex-end;
+    font-size: 0.8em;
+    color: #5a5a5a; /* Dark grey text color */
+    margin-bottom: 2em;
+    text-decoration: none;
+}
+.form button {
+    width: 100%;
+    padding: 0.7em;
+    border: none;
+    background-color: #c1c1c1; /* Grey button color */
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.footer {
+    margin-bottom: 20px;
+    font-size: 0.8em;
+}
+.footer .green-text {
+    color: #a6e22e; /* Green text color */
+    font-weight: bold;
+}
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper mat-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6C63FF;
+}
+.country-code {
+  position: absolute;
+  width: 27px;
+  height: 18px;
+  left: 210px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #cccccc;
+}
+p-button:disabled {
+  background-color: grey !important;
+  cursor: not-allowed !important;
+  color: #3A2EBA;
+}
+.phone-number {
+  width: 100%;
+  padding-left: 40px; /* To make space for the country code */
+}

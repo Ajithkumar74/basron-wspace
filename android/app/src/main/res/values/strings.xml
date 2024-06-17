@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">basron-app-ui</string>
+    <string name="title_activity_main">basron-app-ui</string>
+    <string name="package_name">com.virtusa.app</string>
+    <string name="custom_url_scheme">com.virtusa.app</string>
+</resources>

@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Define the Azure/Blue palette
+$azure-blue-primary: mat-palette($mat-blue);
+$azure-blue-accent: mat-palette($mat-azure, A200, A100, A400);
+
+// Create the theme using the Azure/Blue palette
+$azure-blue-theme: mat-light-theme((
+  color: (
+    primary: $azure-blue-primary,
+    accent: $azure-blue-accent,
+  )
+));
+
+// Include the Azure/Blue theme
+@include angular-material-theme($azure-blue-theme);

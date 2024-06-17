@@ -3,5 +3,172 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "basron-app-ui": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/basron-app-ui",
+      "sourceRoot": "projects/basron-app-ui/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/basron-app-ui",
+            "index": "projects/basron-app-ui/src/index.html",
+            "browser": "projects/basron-app-ui/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/basron-app-ui/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/basron-app-ui/public"
+              }
+            ],
+            "styles": [
+             "projects/basron-app-ui/src/styles.css",
+              "./node_modules/@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "basron-app-ui:build:production"
+            },
+            "development": {
+              "buildTarget": "basron-app-ui:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/basron-app-ui/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/basron-app-ui/public/assets",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "projects/basron-app-ui/src/styles.css",
+              "./node_modules/@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "uiux": {
+      "projectType": "library",
+      "root": "projects/uiux",
+      "sourceRoot": "projects/uiux/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/uiux/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uiux/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/uiux/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/uiux/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "dvc-camera": {
+      "projectType": "library",
+      "root": "projects/dvc-camera",
+      "sourceRoot": "projects/dvc-camera/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dvc-camera/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dvc-camera/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dvc-camera/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/dvc-camera/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

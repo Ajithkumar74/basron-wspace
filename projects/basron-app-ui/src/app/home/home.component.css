@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(to bottom, lightblue, darkblue); /* Gradient background from light blue to dark blue */
+    color: white; /* Default text color is white */
+    font-family: Arial, sans-serif; /* Default font family */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.title {
+    font-size: 3em;
+    margin: 0.5em;
+    font-weight: bold;
+}
+.subtitle {
+    font-size: 1.2em;
+    margin: 0.5em;
+    font-weight: 300;
+}
+.powered-by {
+    margin-top: auto;
+    font-size: 1em;
+    font-weight: 300;
+}
+.green-text {
+    color: #a6e22e; /* Green text color */
+    font-size: 2em;
+    font-weight: bold;
+}

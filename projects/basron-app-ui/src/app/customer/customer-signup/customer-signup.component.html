@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - BASRON</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Basron!<br />Sign up with us!</h1>
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+        <p-card header="" [style]="{ width: '360px' }">
+          
+        <div class="field">
+
+        <input type="text" pInputText formControlName="email"  class="w-full" name="email"  placeholder="Email" />
+        <small
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="block p-error">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Email should be valid</div>
+        </small>
+
+        </div>
+        <div class="field">
+        <div class="phone-wrapper">
+          
+        <input type="tel" id="phone" name="phone" pInputText formControlName="phone"class="phone-number" class="w-full" name="phone"  placeholder="+91 |   Phone No" />
+        </div>
+        <small
+        *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="block p-error">
+        <div *ngIf="phone.errors?.['required']">Phone number is required</div>
+        <div *ngIf="phone.errors?.['pattern']">Phone number must include country code and be 10 digits long</div>
+
+      </small>
+
+        </div>
+
+        <div class="field">
+          <div class="password-wrapper">
+          <input [type]="showPassword ? 'text' :'password'" placeholder="Password"  class="w-full" pInputText formControlName="password" name="password"  required />
+          <mat-icon (click)="togglePasswordVisibility()">{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </div>
+          <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+          <div *ngIf="password.errors?.['required']">Password is required.</div>
+
+        </small>
+        </div>
+
+        <div class="field">
+          <div class="password-wrapper">
+          <input [type]="showRepeatPassword ? 'text' : 'password'" placeholder="Repeat Password"  pInputText formControlName="repeatPassword" class="w-full" name="repeatPassword" required />
+          <mat-icon (click)="toggleRepeatPasswordVisibility()">{{ showRepeatPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </div>
+          <small *ngIf=" repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched)" class="block p-error">
+
+          <div *ngIf="repeatPassword.errors?.['required']">Confirm the password</div>
+        </small>
+
+      <small
+        class="block p-error"
+        *ngIf="registerForm.errors?.['passwordMismatch'] && repeatPassword.valid && password.valid">
+        Password should match
+      </small>
+        </div>
+
+      
+        <p-button label="Send Code to Your Mobile" styleClass="w-full" [disabled]="registerForm.invalid"
+        type="submit" ></p-button>
+         <br>
+        <a href="/reset-password">Forgot?</a>
+
+        </p-card>
+      </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+      <div>
+        <h2>BASRON</h2>
+        powered by<br />
+        <span class="green-text">INVCOM</span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BASRON</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="title">Hi Again!</div>
+        <div class="subtitle">Let’s get you logged in!</div>
+        <form class="form"  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <p-card header="Login" [style]="{ width: '360px' }">
+                <div class="field">
+            <input type="email" placeholder="  Email" pInputText formControlName="email" class="w-full"required />
+            <small  *ngIf="email.invalid && (email.dirty || email.touched)"class="block p-error">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Email should be valid</div>
+      </small>
+      </div>
+
+    
+    <div class="field">
+        <div class="password-wrapper">
+        <input [type]="showPassword ? 'text' :'password'" placeholder="Password"  class="w-full" pInputText formControlName="password" name="password"  required />
+        <mat-icon (click)="togglePasswordVisibility()">{{ showPassword ? ' visibility_off' : 'visibility' }}</mat-icon>
+        </div>
+        <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+        <div *ngIf="password.errors?.['required']">Password is required.</div>
+
+      </small>
+      </div>
+      
+    <p-button label="Login" styleClass="w-full" [disabled]="loginForm.invalid" type="submit">
+        
+    </p-button>
+            <a href="/reset-password" class="forgot-password">Forgot?</a>
+            <br>
+            <br>
+            <br>
+        </p-card>
+        </form>
+
+    </div>
+    <div class="footer">
+        <div> <h2>BASRON</h2>powered by<br> <span class="green-text">INVCOM</span></div>
+    </div>
+</body>
+</html>
