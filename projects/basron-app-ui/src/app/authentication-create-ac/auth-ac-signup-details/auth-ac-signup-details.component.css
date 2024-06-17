@@ -1,77 +1,194 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Overpass', sans-serif;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-.container {
-    background-color: white;
-    width: 375px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-.header {
-    background-color: #4e2aff;
-    color: white;
+    background: #F0F0F0; /* light grey background to see centering more clearly */
+  }
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .app-customer-persona {
+    position: relative;
+    width: 430px;
+    height: 932px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
     padding: 20px;
-    text-align: center;
-}
-.header h2 {
-    margin: 0;
-}
-.content {
-    padding: 20px;
-}
-.progress {
+  }
+  
+  .rectangle-3 {
+    position: absolute;
+    width: 430px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    background: #3A2EBA;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .top-bar {
+    position: absolute;
+    width: 100%;
+    height: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-}
-.progress span {
-    flex: 1;
-    height: 2px;
-    background-color: #ddd;
-    margin: 0 5px;
-}
-.progress span.active {
-    background-color: #4e2aff;
-}
-.info {
-    margin-bottom: 20px;
-}
-.info h3 {
-    margin-top: 0;
-}
-.info ul {
-    list-style-type: none;
-    padding: 0;
-}
-.info ul li {
-    margin-bottom: 10px;
-}
-.info ul li:before {
-    content: "•";
-    color: black;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-.button {
+    padding: 20px;
+    top: 20px;
+  }
+  
+  .back-button {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .create-account {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .sign-up {
+    position: absolute;
+    width: 277px;
+    height: 30px;
+    left: calc(50% - 277px / 2 - 50.5px);
+    top: 214px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+  }
+  
+  .help-text,
+  .additional-text,
+  .time-text {
+    position: absolute;
+    width: 382px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #848998;
+  }
+  
+  .help-text {
+    top: 264px;
+    left: 28px;
+  }
+  
+  .additional-text {
+    top: 402px;
+    left: 28px;
+  }
+  
+  .time-text {
+    top: 536px;
+    left: 28px;
+  }
+  
+  .details,
+  .additional-details {
+    position: absolute;
+    width: 382px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+  }
+  
+  .details {
+    top: 295px;
+    left: 28px;
+  }
+  
+  .additional-details {
+    top: 453px;
+    left: 28px;
+  }
+  
+  .primary-button {
     display: flex;
     justify-content: center;
-}
-.button button {
-    background-color: #4e2aff;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
+    align-items: center;
+    padding: 12px 25px;
+    position: absolute;
+    width: 390px;
+    height: 52px;
+    left: calc(50% - 390px / 2);
+    top: 840px;
+    background: #3A2EBA;
+    border: 1px solid #3A2EBA;
+    border-radius: 5px;
+  }
+  
+  .button-text {
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-}
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    width: 342px;
+    left: 45px;
+    top: 159px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .progress-step {
+    width: 15px;
+    height: 14px;
+    background: #FFFFFF;
+    border: 2px solid #E4E4E4;
+    border-radius: 50%;
+  }
+  
+  .progress-step.complete {
+    background: #91C60F;
+    border-color: #91C60F;
+  }
+  
+  .progress-labels {
+    position: absolute;
+    width: 342px;
+    left: 45px;
+    top: 172px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .label {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #848998;
+  }
+  
+  .label.profile {
+    color: #313544;
+  }
+  

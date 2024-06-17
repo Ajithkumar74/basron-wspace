@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+    <title>Activity Center</title>
    
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <h2>Create Account</h2>
+<div class="app-customer-persona">
+    <div class="rectangle-3"></div>
+    <div class="top-bar">
+      <div class="back-button"><img src="assets/images/back-button-icon.png" alt="Back Icon" width="24" height="24">      </div>
+      <h1 class="create-account">Create Account</h1>
     </div>
-    <div class="content">
-        <div class="progress">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="info">
-            <h3>Sign up with your details</h3>
-            <p>To help setup your account, let us know:</p>
-            <ul>
-                <li>Your name, contact details and address</li>
-                <li>Your date of birth, profession and nationality</li>
-                <li>How you'll fund your account</li>
-                <li>If you've traded before</li>
-            </ul>
-            <p>We'll also ask for your ID details investment approach but you can also add these later:</p>
-            <ul>
-                <li>Your investment goals</li>
-                <li>Your risk appetite</li>
-                <li>Your industry and sector preferences</li>
-            </ul>
-            <p>It should take about 5 minutes to answer all the questions.</p>
-        </div>
-        <div class="button">
-            <button (click)="onActivity()">Get Started</button>
-        </div>
+    <h2 class="sign-up" (click)="onActivity()">Sign up with your details</h2>
+    <p class="help-text">To help setup your account, let us know:</p>
+    <p class="details">
+      Your name, contact details and address<br>
+      Your date of birth, profession and nationality<br>
+      How you’ll fund your account<br>
+      If you’ve traded before
+    </p>
+    <p class="additional-text">We’ll also ask for your ID details investment approach but you can also add these later:</p>
+    <p class="additional-details">
+      Your investment goals<br>
+      Your risk appetite<br>
+      Your industry and sector preferences
+    </p>
+    <p class="time-text">It should take about 5 minutes to answer all the questions.</p>
+    <div class="primary-button">
+      <span class="button-text">Get Started</span>
     </div>
-</div>
-
+    <div class="progress-bar">
+      <div class="progress-step complete"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+    </div>
+    <div class="progress-labels">
+      <span class="label profile">Profile</span>
+      <span class="label">Contact</span>
+      <span class="label">Personal</span>
+      <span class="label">Finances</span>
+      <span class="label">Preferences</span>
+      <span class="label">Account</span>
+    </div>
+  </div>
 </body>
 </html>
