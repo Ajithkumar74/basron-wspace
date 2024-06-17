@@ -30,6 +30,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.headers-text {
+    display: flex;
+    flex-direction: column;
+}
 
 .header h6 {
     margin: 0;
@@ -74,14 +86,22 @@ body {
 .header2-icon {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
+.header2-icon {
+    display: flex;
+    align-items: center;
+}
+ 
 .header2-icon img  {
+    
+width: 32px;
+height: 32px;
+top: 158px;
+left: 304px;
+gap: 0px;
+opacity: 0px;
 
-    width: 24px;
-    height: 24px;
-  
 }
 
 .content {
@@ -90,9 +110,9 @@ body {
 
 .date-header {
     color: #4e2aff;
-    font-size: medium;
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: larger;
 }
 
 .transaction {
