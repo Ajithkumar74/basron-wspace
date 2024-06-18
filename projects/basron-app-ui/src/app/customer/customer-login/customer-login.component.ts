@@ -60,20 +60,22 @@ export class CustomerLoginComponent {
     const { email, password } = this.loginForm.value;
     this.authService.getUserByEmail(email as string).subscribe(
       response => {
-        if (response.length > 0 && response[0].password === password) {
+        if (response.length > 0) {
+          const customer=response[0];
+          if (customer.email === email && customer.password === password) {
           sessionStorage.setItem('email', email as string);
           this.router.navigate(['/auth-login']);
         } else {
-          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });
+          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email, password, or role is incorrect' });
         }
-      },
-      error => {
-        this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+      } else {
+        this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email or password is incorrect' });
       }
-
-    )
-  }
- 
-
+    },
+    error => {
+      this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+    }
+  );
 }
 
+}

@@ -1,21 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../../../app-routing/app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,AppRoutingModule],
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.css'
 })
 export class ResetPasswordComponent {
+  navigateToSignup(): void {
+    this.router.navigate(['/signup']);
+  }
   email: string = '';
 
   newPassword: string = '';
   confirmPassword: string = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   sendResetLink(): void {
     if (this.email) {

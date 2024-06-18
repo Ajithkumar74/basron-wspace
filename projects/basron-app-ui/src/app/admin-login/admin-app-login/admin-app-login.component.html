@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - BASRON</title>
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
 </head>
 <body>
     <div class="container">
         <div class="title">Hi Again!</div>
         <div class="subtitle">Let’s get you logged in!</div>
-        <form class="form"  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <form class="form"  [formGroup]="loginForm" (ngSubmit)="AdminLogin()">
             <p-card header="Login" [style]="{ width: '360px' }">
                 <div class="field">
             <input type="email" placeholder="  Email" pInputText formControlName="email" class="w-full"required />

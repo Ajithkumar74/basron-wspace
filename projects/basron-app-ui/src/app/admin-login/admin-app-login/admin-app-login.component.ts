@@ -51,22 +51,26 @@ export class AdminAppLoginComponent {
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
-  loginUser() {
+  AdminLogin() {
     const { email, password } = this.loginForm.value;
-    this.authService.getUserByEmail(email as string).subscribe(
+    this.authService.getAdminByEmail(email as string).subscribe(
       response => {
-        if (response.length > 0 && response[0].password === password) {
-          sessionStorage.setItem('email', email as string);
-          this.router.navigate(['/auth-admin']);
+         if (response.length > 0) {
+          const admin=response[0];
+          if (admin.email === email && admin.password === password) {
+            sessionStorage.setItem('email', email as string);
+            this.router.navigate(['/auth-admin']);
+          } else {
+            this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email, password, or role is incorrect' });
+          }
         } else {
-          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });
+          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email or password is incorrect' });
         }
       },
       error => {
         this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
       }
-
-    )
+    );
   }
  
 }

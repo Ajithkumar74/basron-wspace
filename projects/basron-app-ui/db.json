@@ -1,22 +1,24 @@
 {
   "users": [
     {
-      "id": "54f4",
-      "email": "ajithkumar2419990@gmail.com",
-      "phone": "+919148627752",
-      "password": "12345"
+      "id": "296d",
+      "email": "ajay23@gmail.com",
+      "phone": "+918909786758",
+      "password": "1234"
+    }
+  ],
+  "admin": [
+    {
+      "id": "90d3",
+      "email": "ajithaj941@gmail.com",
+      "phone": "+917976792838",
+      "password": "178"
     },
     {
-      "id": "665c",
-      "email": "arjith@gmail.com",
-      "phone": "+910789056786",
-      "password": "123"
-    },
-    {
-      "id": "dac9",
-      "email": "jay34@gmail.com",
-      "phone": "+919080678945",
-      "password": "125"
+      "id": "def1",
+      "email": "ajith34@gmail.com",
+      "phone": "+91678956478",
+      "password": "145"
     }
   ]
 }

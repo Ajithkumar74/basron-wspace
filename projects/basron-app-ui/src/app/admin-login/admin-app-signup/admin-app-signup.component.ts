@@ -11,9 +11,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { AuthService } from '../../../../../../auth.service';
 import { AppRoutingModule } from '../../app-routing/app-routing.module';
-import { User } from '../../interfaces/auth';
 import { passwordMatchValidator } from '../../shared/password-match.directive';
 import { phoneLengthValidator } from '../../shared/phoneLengthValidator';
+import { AdminUser } from '../../interfaces/aauth';
 
 @Component({
   selector: 'app-admin-app-signup',
@@ -34,9 +34,10 @@ import { phoneLengthValidator } from '../../shared/phoneLengthValidator';
 export class AdminAppSignupComponent {
 
 
+
   registerForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
-    phone: ['',[Validators.required, Validators.pattern('^\\+\\d{1,2}\\d{10}$'),phoneLengthValidator]],
+    phone: ['',[Validators.required, Validators.pattern('^\\+\\d{1,2}\\d{10}$')]],
     password: ['',Validators.required],
     repeatPassword: ['',Validators.required]
   },{
@@ -76,22 +77,24 @@ export class AdminAppSignupComponent {
   }
 
   submitDetails(){
-    if (this.registerForm.valid) {
+    if(this.registerForm.valid){
 
-     const postData = { ...this.registerForm.value };
-     delete postData.repeatPassword;
-    this.authService.registerUser(postData as User).subscribe(
-      response=>{
-        console.log(response);
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register To Enter OTP' });
-        this.router.navigate(['auth'])
-    },
-      error=>
-    {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
-    }
-  );
     
-  }
+    const postData = { ...this.registerForm.value };
+    delete postData.repeatPassword;
+   this.authService.registerAdmin(postData as AdminUser).subscribe(
+     response=>{
+       console.log(response);
+       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register to Enter OTP' });
+       this.router.navigate(['auth-admin'])
+   },
+     error=>
+   {
+     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+   }
+ )
+   
+ }
 }
+
 }
