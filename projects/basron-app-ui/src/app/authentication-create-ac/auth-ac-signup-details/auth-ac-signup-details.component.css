@@ -63,14 +63,8 @@
   }
   
   .create-account {
-    /* font-weight: 700;
     font-size: 19px;
-    line-height: 24px;
-    color: #FFFFFF;
-    text-align: center;
-    flex-grow: 1; */
-    font-size: 19px;
-    font-weight: bold;    
+    font-weight: 500;    
     color: #FFFFFF;
     flex-grow: 1;
     text-align: center;
