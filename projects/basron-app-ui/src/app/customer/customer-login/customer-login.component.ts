@@ -40,7 +40,9 @@ export class CustomerLoginComponent {
     password: ['', Validators.required]
   })
 
-
+  Backonauth() {
+    this.router.navigate(['customer']);
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -64,7 +66,7 @@ export class CustomerLoginComponent {
           const customer=response[0];
           if (customer.email === email && customer.password === password) {
           sessionStorage.setItem('email', email as string);
-          this.router.navigate(['/auth-login']);
+          this.router.navigate(['/auth-login-auth']);
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email, password, or role is incorrect' });
         }

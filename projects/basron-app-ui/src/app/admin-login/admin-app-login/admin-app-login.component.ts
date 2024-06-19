@@ -34,7 +34,9 @@ export class AdminAppLoginComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   })
-
+  Backonauth() {
+    this.router.navigate(['admin']);
+  }
 
 
   constructor(
@@ -59,7 +61,7 @@ export class AdminAppLoginComponent {
           const admin=response[0];
           if (admin.email === email && admin.password === password) {
             sessionStorage.setItem('email', email as string);
-            this.router.navigate(['/auth-admin']);
+            this.router.navigate(['/auth-admin-login']);
           } else {
             this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Email, password, or role is incorrect' });
           }

@@ -8,9 +8,9 @@ h2 {
 color: #6C63FF;
 margin-bottom: 10px;
 }
-    background-color: #f8f8f8; /* Light grey background */
-    color: #5a5a5a; /* Dark grey text color */
-    font-family: Arial, sans-serif; /* Default font family */
+    background-color: #f8f8f8; 
+    color: #5a5a5a; 
+    font-family: Arial, sans-serif; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,18 +108,9 @@ margin-bottom: 10px;
   color: #6C63FF;
 }
 .country-code {
-  position: absolute;
-  width: 27px;
-  height: 18px;
-  left: 210px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: #cccccc;
+    width: 60px;
+    margin-right: 10px;
+  
 }
 p-button:disabled {
   background-color: grey !important;
@@ -128,5 +119,23 @@ p-button:disabled {
 }
 .phone-number {
   width: 100%;
-  padding-left: 40px; /* To make space for the country code */
+  padding-left: 40px;
 }
+
+.phone-wrapper {
+    display: flex; 
+    align-items: center; 
+    position: relative;
+
+  }
+
+  .phone-wrapper select {
+    padding: 8px; 
+    margin-right: 8px; 
+  }
+
+  .phone-wrapper input {
+    flex: 1; 
+    padding: 8px; 
+  }
+  

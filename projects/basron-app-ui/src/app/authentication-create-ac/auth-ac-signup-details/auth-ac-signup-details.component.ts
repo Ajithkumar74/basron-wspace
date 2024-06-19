@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
   styleUrl: './auth-ac-signup-details.component.css'
 })
 export class AuthAcSignupDetailsComponent {
+
+Backonauth() {
+  this.router.navigate(['auth-create']);
+}
   constructor(private router:Router){}
 
 

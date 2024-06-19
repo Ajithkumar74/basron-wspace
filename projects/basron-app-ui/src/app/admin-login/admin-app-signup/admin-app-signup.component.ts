@@ -37,7 +37,7 @@ export class AdminAppSignupComponent {
 
   registerForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
-    phone: ['',[Validators.required, Validators.pattern('^\\+\\d{1,2}\\d{10}$')]],
+    phone: ['',[Validators.required, Validators.pattern('^\\d{10}$')]],
     password: ['',Validators.required],
     repeatPassword: ['',Validators.required]
   },{
@@ -46,7 +46,10 @@ export class AdminAppSignupComponent {
   });
   showPassword: boolean = false;
   showRepeatPassword: boolean = false;
-
+  Backonauth() {
+    this.router.navigate(['admin']);
+  }
+  
   constructor(
     private fb: FormBuilder,
     private authService: AuthService ,
@@ -86,7 +89,7 @@ export class AdminAppSignupComponent {
      response=>{
        console.log(response);
        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register to Enter OTP' });
-       this.router.navigate(['auth-admin'])
+       this.router.navigate(['auth-admin-login'])
    },
      error=>
    {

@@ -13,14 +13,14 @@
         <h1>Authentication</h1>
         <p>Enter Code received on your mobile ending *748</p>
         <div class="code-inputs">
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1" >
-            <input type="text" maxlength="1" >
+          <input type="text" id="otp0" maxlength="1" [(ngModel)]="otp[0]" (input)="moveToNext($event, 0)">
+          <input type="text" id="otp1" maxlength="1" [(ngModel)]="otp[1]" (input)="moveToNext($event, 1)">
+          <input type="text" id="otp2" maxlength="1" [(ngModel)]="otp[2]" (input)="moveToNext($event, 2)">
+          <input type="text" id="otp3" maxlength="1" [(ngModel)]="otp[3]" (input)="moveToNext($event, 3)">
+          <input type="text" id="otp4" maxlength="1" [(ngModel)]="otp[4]" (input)="moveToNext($event, 4)">
+          <input type="text" id="otp5" maxlength="1" [(ngModel)]="otp[5]" (input)="moveToNext($event, 5)">
         </div>
-        <button type="button" (click)="onCodeEntered()">Login</button>
+        <p-button type="button" (click)="onCodeEntered()"  [disabled]="!isOtpComplete">Login</p-button>
         <br>
         <br>
         <br>

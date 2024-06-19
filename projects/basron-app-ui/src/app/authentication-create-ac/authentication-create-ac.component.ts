@@ -26,5 +26,11 @@ export class AuthenticationCreateAcComponent {
         this.router.navigate(['auth-signup']);
       }
       } 
+      moveToNext(event: any, index: number) {
+        if (event.target.value.length === 1 && index < 5) {
+          document.getElementById(`otp${index + 1}`)?.focus();
+        }
+        this.checkOtp();
+      }
 
 }

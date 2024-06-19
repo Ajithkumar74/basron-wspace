@@ -14,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     MessageService,
     provideAnimations(),
-    ToastModule, provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync(),
+    ToastModule, provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync(),
   ]
 };

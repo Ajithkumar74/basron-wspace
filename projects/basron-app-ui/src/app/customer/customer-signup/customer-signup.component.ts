@@ -14,7 +14,9 @@ import { passwordMatchValidator } from '../../shared/password-match.directive';
 import { AuthService } from '../../../../../../auth.service';
 import { MessageService } from 'primeng/api';
 import { User } from '../../interfaces/auth';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-customer-signup',
   standalone: true,
@@ -29,18 +31,20 @@ import { User } from '../../interfaces/auth';
     ButtonModule,ToastModule,
     CardModule,
     MatIconModule
-
   ],
   templateUrl: './customer-signup.component.html',
   styleUrl: './customer-signup.component.css'
 })
 export class CustomerSignupComponent {
+Backonauth() {
+  this.router.navigate(['customer']);
+}
 
 
 
   registerForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
-    phone: ['',[Validators.required, Validators.pattern('^\\+\\d{1,2}\\d{10}$')]],
+    phone: ['',[Validators.required, Validators.pattern('^\\d{10}$')]],
     password: ['',Validators.required],
     repeatPassword: ['',Validators.required]
   },{
@@ -89,7 +93,7 @@ export class CustomerSignupComponent {
      response=>{
        console.log(response);
        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register to Enter OTP' });
-       this.router.navigate(['auth'])
+       this.router.navigate(['auth-create'])
    },
      error=>
    {

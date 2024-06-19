@@ -98,4 +98,8 @@ body {
   footer .invcom {
   color: #88E000;
   }
-  
+  p-button:disabled {
+    background-color: grey !important;
+    cursor: not-allowed !important;
+    color: #3A2EBA;
+  }
